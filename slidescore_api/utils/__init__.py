@@ -4,4 +4,4 @@
 
 __author__ = """Ajey Pai"""
 __email__ = "a.karkala@nki.nl"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
