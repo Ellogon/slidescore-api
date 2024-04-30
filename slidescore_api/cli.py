@@ -412,7 +412,9 @@ def download_wsis(
     # Download and save WSIs
     for image in tqdm(images):
         image_id = image["id"]
-
+        if (save_dir / image_id).exists():
+            logger.info("Skipping: image id folder already exists: %s", image_id)
+            continue
         logger.info("Downloading image for id: %s", image_id)
         filename = client.download_slide(study_id, image, save_dir=save_dir)
         logger.info("Image with id %s has been saved to %s.", image_id, filename)
